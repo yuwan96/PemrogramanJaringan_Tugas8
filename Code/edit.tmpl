@@ -1,0 +1,40 @@
+{{ define "edit" }}
+{{ template "header" }}
+<div class="col-md-5 mx-auto mt-5">  
+    <div class="ml-1">
+    <p><a href="/"><button>Kembali</button></a></p>
+    <form method="POST" action="update">
+        <input type="hidden" name="id" value="{{ .ID }}" />
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" name="nama" value="{{ .Nama }}"/></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="text" name="email" value="{{ .Email }}"/></td>
+            </tr>
+            <tr>
+                <td>No Telp</td>
+                <td>:</td>
+                <td><input type="text" name="notelp" value="{{ .NoTlp }}"/></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><input type="text" name="alamat" value="{{ .Alamat }}"/></td>
+            </tr>
+            <tr>
+                <td></br></td>
+            </tr>
+            <tr>
+                <td rowspan="3"><input type="submit" value="Update" /></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</div>
+{{ template "footer" }}
+{{ end }}

@@ -1,0 +1,38 @@
+{{ define "index" }}
+{{ template "header" }}
+<div class="container">
+
+
+  <div class="col-md-9 mx-auto mt-5">  
+ 
+  <p><a class="mx-auto" href="/Add"><button>Tambah Data</button></a></p>
+
+    <table border="1" cellpadding="9">
+      <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>No Telp</th>
+        <th>Alamat</th>
+        <th>Aksi</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td> {{ .Nama }} </td>
+        <td>{{ .Email }} </td> 
+        <td>{{ .NoTlp }}</td>
+        <td>{{ .Alamat }}</td>
+        <td>
+          <a href="/edit?id={{ .ID }}"><button>Edit</button></a> 
+          <a href="/delete?id={{ .ID }}" onclick="return confirm('Apakah anda ingin menghapus data {{ .Nama }} ?')" ><button>Delete</button></a>
+        </td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+</div>
+</div>
+{{ template "footer" }}
+{{ end }}
